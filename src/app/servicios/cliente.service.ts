@@ -7,9 +7,9 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class ClienteServicio{
   clientesColeccion: AngularFirestoreCollection<Cliente>;
-  clienteDoc: AngularFirestoreDocument<Cliente>;
-  clientes: Observable<Cliente[]>;
-  cliente: Observable<Cliente>;
+  clienteDoc: AngularFirestoreDocument<Cliente> | undefined;
+  clientes: Observable<Cliente[]> | undefined;
+  cliente: Observable<Cliente> | undefined;
 
   constructor(private db:AngularFirestore){
     //acá traemos la coleccion de clientes creada en firstore
