@@ -1,5 +1,5 @@
 import { ClienteServicio } from './../../servicios/cliente.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Cliente } from 'src/app/modelo/cliente.model';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { NgForm } from '@angular/forms';
@@ -17,12 +17,17 @@ export class ClientesComponent implements OnInit {
     apellido:'',
     email: '',
     saldo: 0
-  }
+  };
+
+  @ViewChild("clinteForm") clienteForm: NgForm;
+
+  @ViewChild("botonCerrar") botonCerrar: ElementRef;
+
   constructor(
     private clientesServicio: ClienteServicio,
     private flashMessages: FlashMessagesService,
 
-    ) { }
+    ) {}
 
   ngOnInit(): void {
     this.clientesServicio.getClientes().subscribe(
@@ -47,13 +52,15 @@ export class ClientesComponent implements OnInit {
       this.flashMessages.show('Por favor llena el formulario correctamente', {
         cssClass: 'alert-danger',timeout: 4000
       });
-    }
-    else{
+    } else {
       //Agregar el nuevo cliente
-      // this.clientesServicio.agregarCliente(value);
-      // this.clienteForm.resetForm();
-      // this.cerrarModal();
+      this.clientesServicio.agregarCliente(f.value);
+      this.clienteForm.resetForm();
+      this.cerrarModal();
     }
+  }
+  private cerrarModal(){
+    this.botonCerrar.nativeElement.click()
   }
 
 }
