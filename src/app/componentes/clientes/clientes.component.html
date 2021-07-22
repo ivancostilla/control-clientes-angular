@@ -28,6 +28,7 @@
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Saldo</th>
+                <th></th>
               </tr>
             </thead>
 
@@ -36,11 +37,40 @@
                 <td>{{i+1}}</td>
                 <td>{{cliente.nombre}} {{cliente.apellido}}</td>
                 <td>{{cliente.saldo | currency: 'ARS': '$'}}</td>
+                <td>
+                  <!-- pasamos como parametro el id del cliente que obtuvimos de firestore
+                  al hacer click en el boton nos lleva a la pagina de edicion -->
+                  <a routerLink="/cliente/editar/{{cliente.id}}" class="btn btn-secondary">
+                    <i class="fas fa-angle-double-right"></i> Editar
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+      <!-- Tarjetas laterales -->
+      <div class="col-md-3">
+        <div class="card text-center bg-danger text-wihte mb-3">
+          <div class="card-body">
+            <h3>Saldo Total</h3>
+            <h4 class="display-4">
+              {{getSaldoTotal() | currency: 'ARS': '$'}}
+            </h4>
+          </div>
+        </div>
+
+        <div class="card text-center bg-success text-wihte mb-3">
+          <div class="card-body">
+            <h3>Total Clientes</h3>
+            <h4 class="display-4">
+              <i class="fas fa-users"></i> {{clientes?.length}}
+            </h4>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 </section>

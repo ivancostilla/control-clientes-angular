@@ -18,6 +18,16 @@ export class ClientesComponent implements OnInit {
         this.clientes =  clientes;
       }
     )
+  };
+
+  getSaldoTotal(){
+    let saldoTotal: number = 0;
+    if(this.clientes){
+      this.clientes.map(cliente => {
+        saldoTotal += Number(cliente.saldo);
+      })
+    }
+    return saldoTotal;
   }
 
 }
