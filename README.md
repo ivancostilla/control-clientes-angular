@@ -1,6 +1,9 @@
 PARA PODER HACER LOGIN EN LA APP:
- USUARIO: ivan20.88@hotmail.com
- CONTRASEÑA: 123456
+ USUARIO: ivan20.88@hotmail.com.
+ CONTRASEÑA: 123456.
+ 
+ deploy de la app en: 
+ https://control-clientes-15ba0.firebaseapp.com/
 
 # ControlClientes
 
