@@ -1,3 +1,7 @@
+PARA PODER HACER LOGIN EN LA APP:
+ USUARIO: ivan20.88@hotmail.com
+ CONTRASEÑA: 123456
+
 # ControlClientes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
