@@ -19,6 +19,13 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //esto es para que una vez estemos logueados la pagina
+    //de login ya no se muestre
+    this.loginService.getAuth().subscribe(auth => {
+      if(auth){
+        this.router.navigate(['/'])
+      }
+    })
   }
 
   login(){
