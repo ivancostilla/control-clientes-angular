@@ -24,7 +24,7 @@
             <i class="fas fa-user"></i> Bienvenido {{loggedInUser}}
           </a>
         </li>
-        <li *ngIf="!isLoggedIn" class="nav-item px-2">
+        <li *ngIf="!isLoggedIn && permitirRegistro" class="nav-item px-2">
           <a routerLink="/login" class="nav-link"
            routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> LogIn
@@ -35,7 +35,7 @@
             <i class="fas fa-user-times"></i> LogOut
           </a>
         </li>
-        <li *ngIf="!isLoggedIn" class="nav-item px-2">
+        <li *ngIf="!isLoggedIn && permitirRegistro" class="nav-item px-2">
           <a routerLink="/registrarse" class="nav-link"
           routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> Registrarse
