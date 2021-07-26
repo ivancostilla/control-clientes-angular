@@ -25,13 +25,20 @@
           </a>
         </li>
         <li *ngIf="!isLoggedIn" class="nav-item px-2">
-          <a routerLink="/login" class="nav-link">
+          <a routerLink="/login" class="nav-link"
+           routerLinkActive="router-link-active">
             <i class="fas fa-user"></i> LogIn
           </a>
         </li>
         <li *ngIf="isLoggedIn" class="nav-item px-2">
           <a style="cursor:pointer" (click)="logout()" class="nav-link">
             <i class="fas fa-user-times"></i> LogOut
+          </a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item px-2">
+          <a routerLink="/registrarse" class="nav-link"
+          routerLinkActive="router-link-active">
+            <i class="fas fa-user"></i> Registrarse
           </a>
         </li>
       </ul>
